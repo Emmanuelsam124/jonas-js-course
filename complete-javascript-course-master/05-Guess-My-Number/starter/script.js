@@ -20,7 +20,6 @@ const wrongGuess = function (guessComment) {
 const gameReset = function () {
   document.querySelector('.guess').value = '';
   secretNumber = Math.trunc(Math.random() * 20 + 1);
-  document.querySelector('.number').textContent = secretNumber;
   document.querySelector('.message').textContent = 'Start guessing...';
   score = 20;
   btnCheck.disabled = false;

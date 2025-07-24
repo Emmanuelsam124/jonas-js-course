@@ -1,5 +1,9 @@
 'use strict';
+const modalEl = document.querySelector('.modal');
+const overlayEl = document.querySelector('.overlay');
+const closeModalEl = document.querySelector('.close-modal');
 const modalButtons = document.querySelectorAll('.show-modal');
+
 for (let button = 0; button < modalButtons.length; button++) {
   modalButtons[button].addEventListener('click', function () {
     document.querySelector('.modal').classList.remove('hidden');
@@ -8,18 +12,17 @@ for (let button = 0; button < modalButtons.length; button++) {
 }
 
 const closeModal = function () {
-  document.querySelector('.modal').classList.add('hidden');
-  document.querySelector('.overlay').classList.add('hidden');
+  modalEl.classList.add('hidden');
+  overlayEl.classList.add('hidden');
 };
 
-document.querySelector('.close-modal').addEventListener('click', closeModal);
-document.querySelector('.overlay').addEventListener('click', closeModal);
+closeModalEl.addEventListener('click', closeModal);
+overlayEl.addEventListener('click', closeModal);
 
 const escKeyToCloseOverlay = function (event) {
   debugger;
   if (event.key === 'Escape') {
-    document.querySelector('.modal').classList.add('hidden');
-    document.querySelector('.overlay').classList.add('hidden');
+    closeModal();
   }
 };
 

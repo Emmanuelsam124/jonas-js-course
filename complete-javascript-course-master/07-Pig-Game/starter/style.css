@@ -56,10 +56,14 @@ main {
   margin-bottom: 1rem;
 }
 
-.score {
+.score,
+.crown {
   font-size: 8rem;
   font-weight: 300;
   color: #c7365f;
+}
+
+.crown {
   margin-bottom: auto;
 }
 
@@ -164,6 +168,19 @@ main {
 .player--winner .name {
   font-weight: 700;
   color: #c7365f;
+}
+
+@keyframes rollInPlace {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* Two full spins */
+  }
+}
+
+.roll {
+  animation: rollInPlace 1s ease-in-out;
 }
 
 .hidden {

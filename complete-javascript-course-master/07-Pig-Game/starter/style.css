@@ -20,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 /* LAYOUT */
@@ -61,6 +62,12 @@ main {
   font-size: 8rem;
   font-weight: 300;
   color: #c7365f;
+}
+
+.player-names {
+  color: #fff;
+  font-size: 3rem;
+  font-style: italic;
 }
 
 .crown {

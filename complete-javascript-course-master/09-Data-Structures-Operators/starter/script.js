@@ -29,7 +29,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
+  order: function (starterIndex, mainIndex) {
+  return {this.starterMenu}
+},
   openingHours: {
     thu: {
       open: 12,
@@ -45,3 +47,7 @@ const restaurant = {
     },
   },
 };
+
+const [main, , secondary] = restaurant.categories;
+
+console.log(main, secondary);

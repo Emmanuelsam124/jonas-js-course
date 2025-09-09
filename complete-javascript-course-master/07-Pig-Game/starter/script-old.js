@@ -78,7 +78,7 @@ const playerWinner = function () {
 const switchPlayer = function () {
   // check if current score is greater than or equal to 21
   // If so, current player wins
-  if (scores[activePlayer] >= 21) {
+  if (scores[activePlayer] >= 100) {
     playerWinner();
   } else {
     document

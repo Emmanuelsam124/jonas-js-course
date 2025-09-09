@@ -6,6 +6,8 @@ const player1Prompt = prompt('Player 1 name:');
 const player2Prompt = prompt('Player 2 name:');
 const holdAudio = new Audio('hold-audio.mp3');
 const resetAudio = new Audio('game-start.mp3');
+document.getElementById('player-name-1').textContent = player1Prompt;
+document.getElementById('player-name-2').textContent = player2Prompt;
 
 const btnRoll = document.querySelector('.btn--roll');
 let score0El = document.getElementById('score--0');
@@ -28,6 +30,8 @@ const init = function () {
   document.querySelector(`.player--1`).classList.remove('player--winner');
   diceEl.classList.add('hidden');
   newGame.classList.add('hidden');
+  document.querySelector(`.winner-icon--0`).textContent = '';
+  document.querySelector(`.winner-icon--1`).textContent = '';
 
   score0El.textContent = 0;
   score1El.textContent = 0;
@@ -66,7 +70,7 @@ const btnHoldRoll = function () {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 21) {
+    if (scores[activePlayer] >= 100) {
       playerWinner();
     } else {
       switchPlayer();
